@@ -1,11 +1,3 @@
-name = "Jack"
-print(name)
-
 name = "Angela"
-print(name)
-
-# print(len(input("What is your name?")))
-
-username = input("What is your name?")
-length = len(username)
+length = len(name)
 print(length)
