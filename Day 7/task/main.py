@@ -4,20 +4,34 @@ word_list = ["aardvark", "baboon", "camel"]
 chosen_word = random.choice(word_list)
 print(chosen_word)
 
-# TODO-1: Create a "placeholder" with the same number of blanks as the chosen_word
-letter_amount = len(chosen_word)
-number = 0
-while number <=letter_amount:
-    print("_", end=" ")
-    number += 1
+placeholder = ""
+word_length = len(chosen_word)
+for position in range(word_length):
+    placeholder += "_"
+print(placeholder)
 
-guess = input("\nGuess a letter: ").lower()
+# TODO-1: - Use a while loop to let the user guess again.
+game_over = False
+correct_letters = []
 
-# TODO-2: Create a "display" that puts the guess letter in the right positions and _ in the rest of the string.
+while not game_over:
+    guess = input("Guess a letter: ").lower()
 
-for letter in chosen_word:
-    if letter == guess:
-        print(letter, end=" ")
-    else:
-        print("_", end=" ")
+    display = ""
 
+# TODO-2: Change the for loop so that you keep the previous correct letters in display.
+
+    for letter in chosen_word:
+        if letter == guess:
+            display += letter
+            correct_letters.append(guess)
+        elif letter in correct_letters:
+            display += letter
+        else:
+            display += "_"
+
+    print(display)
+
+    if "_" not in display:
+        game_over = True
+        print("you win.")
