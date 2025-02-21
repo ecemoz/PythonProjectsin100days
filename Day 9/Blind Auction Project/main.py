@@ -3,4 +3,5 @@
 # TODO-3: Whether if new bids need to be added
 # TODO-4: Compare bids in dictionary
 
+#You can see this project as a extra project in my github account
 
